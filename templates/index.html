@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Your Book</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/main.css') }}">
+    <!-- <link rel=stylesheet type=text/css href="main.css"> -->
+    <style>
+        body {
+          background-image: url("{{ url_for('static', filename='background.jpg') }}");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="/search" method="POST">
+            <div class="Card">
+                <div class="CardInner" style="width: 50%">
+                    <label style="color: aliceblue">Enter Book you want to search ?</label>
+                    <div class="container">
+                        <div class="form-group InputContainer">
+                            <input style="width: 100%" placeholder="Enter keywords for book..." style="color: black" name="query"/>
+                        </div>
+                        <button class="search-button" type="submit" style="margin-left: 15px">Search</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    
+        {% for ibsn13, isbn10, title, subtitle, authors, categories, thumbnail, description, published_year, average_rating, num_pages, ratings_count in docs %}
+            <div class="movie-card">
+
+                {% if(thumbnail != 'nan') %}
+                    <img src={{thumbnail}} alt=""> 
+                {% endif %}
+
+                {% if(title != 'nan') %}
+                    <h4 style="color: wheat">Title : {{title}}</h4>
+                {% endif %}
+                
+                {% if subtitle %}
+                    <h4>Subtitle : {{subtitle}} </h4>
+                {% endif %}
+
+                {% if(ibsn13 != 'nan') %}
+                    <p>Ibsn : {{ibsn13}}</p> 
+                {% endif %}
+
+                {% if(isbn10 != 'nan') %}
+                    <p>Ibsn : {{isbn10}}</p> 
+                {% endif %}
+
+                {% if(authors != 'nan') %}
+                    <p>Authors : {{authors}}</p>
+                {% endif %}
+
+                {% if(categories != 'nan') %}
+                    <p>Categories : {{categories}}</p> 
+                {% endif %}
+
+                {% if(description != 'nan') %}
+                    <p>description : {{description }}</p>
+                {% endif %}
+
+                {% if(published_year != 'nan') %}
+                    <p>Published_year : {{published_year}}</p>
+                {% endif %}
+
+                {% if(average_rating != 'nan') %}
+                    <p>Average_rating  : {{average_rating }}</p>
+                {% endif %}
+
+                {% if(num_pages != 'nan') %}
+                    <p>Num Pages :  {{num_pages}}</p>
+                {% endif %}
+
+                {% if(ratings_count != 'nan') %}
+                    <p>Ratings Count : {{ratings_count}}</p>
+                {% endif %}
+
+            </div>                
+        {% endfor %}
+    <div>
+</body>
+</html>

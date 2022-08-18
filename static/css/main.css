@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Hind&display=swap");
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+:root {
+  --border-radius: 10px;
+}
+
+/* body,
+html {
+  place-items: center;
+} */
+
+.Card {
+  padding: 1px;
+  /* display: flex; */
+  border-radius: var(--border-radius);
+  /* background: linear-gradient(#28313b, #485461); */
+  overflow: hidden;
+  box-shadow: -2px -2px 6px rgba(#1d4050, 0.6), 2px 2px 12px #c8d8e7;
+  width: 70%;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.CardInner {
+  padding: 16px 16px;
+  background: linear-gradient(to right, #28313b, #485461);
+  border-radius: var(--border-radius);
+}
+
+.container {
+  display: flex;
+}
+
+.Icon {
+  min-width: 46px;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin-right: 12px;
+  background-color: #9ef0e1;
+  box-shadow: -2px -2px 6px rgba(#fff, 0.6), 2px 2px 12px #c8d8e7;
+}
+.Icon:svg {
+  transform: translate(-1px, -1px);
+}
+
+label {
+  /* text-align: center; */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: block;
+  margin-bottom: 20px;
+  margin-top: 8px;
+  font-size: larger;
+}
+
+.InputContainer {
+  width: 100%;
+}
+
+input {
+  background-color: #e3edf7;
+  padding: 3% 5%;
+  border: none;
+  display: block;
+  font-weight: 600;
+  color: #a9b8c9;
+  -webkit-appearance: none;
+  transition: all 240ms ease-out;
+  width: 85%;
+}
+input:placeholder {
+  color: #6d7f8f;
+}
+
+input:focus {
+  outline: none;
+  color: #6d7f8f;
+  background-color: lighten(#e3edf7, 3%);
+}
+
+.InputContainer {
+  --top-shadow: inset 1px 1px 3px #c5d4e3, inset 2px 2px 6px #c5d4e3;
+  --bottom-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.7);
+
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+.InputContainer:before,
+.InputContainer:after {
+  left: 0;
+  top: 0;
+  display: block;
+  content: "";
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.InputContainer:before {
+  box-shadow: var(--bottom-shadow);
+}
+
+.InputContainer:after {
+  box-shadow: var(--top-shadow);
+}
+
+.search-button {
+  background-color: white !important;
+  color: #28313b;
+  font-size: 14px;
+  font: bold;
+  border-radius: 15px;
+  padding: 2px 15px;
+}
+
+.movie-card {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.9rem;
+  margin-left: 5%;
+  margin-top: 2%;
+  color: rgb(255, 255, 255) !important;
+  text-align: left;
+  background-color: #36454f;
+  border-radius: 20px;
+  width: 70%;
+  padding: 16px 24px;
+  opacity: 0.95;
+}
